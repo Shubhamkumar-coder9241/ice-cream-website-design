@@ -54,10 +54,7 @@ function BestSellerCard({ product, index }: { product: (typeof products)[number]
         </div>
         <h3 className="mt-1 font-heading text-2xl font-bold">{product.name}</h3>
         <p className="mt-1 text-sm opacity-80">{product.flavor} · Premium tub</p>
-        <div className="mt-5 flex items-center justify-between gap-3">
-          <span className="font-heading text-2xl font-bold">
-            ${product.price.toFixed(2)}
-          </span>
+        <div className="mt-5 flex items-center justify-end gap-3">
           <Button
             variant={index === 1 ? 'default' : 'secondary'}
             className="rounded-full"

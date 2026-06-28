@@ -7,6 +7,7 @@ import { SectionHeading } from './section-heading'
 import { Reveal } from './reveal'
 import { cn } from '@/lib/utils'
 
+
 type Store = {
   id: string
   name: string
@@ -14,13 +15,20 @@ type Store = {
   hours: string
   x: number
   y: number
+  mapUrl: string
 }
 
 const stores: Store[] = [
-  { id: 's1', name: 'Scoopful Seaside', address: '12 Marine Drive, Bayfront', hours: '10am – 11pm', x: 22, y: 38 },
-  { id: 's2', name: 'Scoopful Downtown', address: '88 Cedar Avenue, City Center', hours: '11am – 12am', x: 54, y: 26 },
-  { id: 's3', name: 'Scoopful Parkside', address: '5 Maple Lane, Greenwood', hours: '10am – 10pm', x: 70, y: 58 },
-  { id: 's4', name: 'Scoopful Mall', address: 'Level 2, Sunrise Mall', hours: '10am – 11pm', x: 38, y: 70 },
+  {
+    id: 's1',
+    name: 'Surya Kwality Walls',
+    address: 'Gandhi Maidan near Mona Cinema',
+    hours: '10am – 11pm',
+    x: 22,
+    y: 38,
+    mapUrl:
+      'https://www.google.com/maps/search/?api=1&query=Gandhi+Maidan+near+Mona+Cinema+Patna',
+  },
 ]
 
 export function StoreLocator() {
@@ -32,7 +40,7 @@ export function StoreLocator() {
         <SectionHeading
           eyebrow="Find Us"
           title="A Scoop Near You"
-          description="320 parlours and counting. Find your nearest Scoopful and treat yourself today."
+          description="  Find your Surya kwality Wall and treat yourself today."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
@@ -59,7 +67,10 @@ export function StoreLocator() {
                     key={s.id}
                     type="button"
                     aria-label={s.name}
-                    onClick={() => setActive(s.id)}
+                    onClick={() => {
+                      setActive(s.id)
+                      window.open(s.mapUrl, "_blank")
+                    }}
                     style={{ left: `${s.x}%`, top: `${s.y}%` }}
                     className="absolute -translate-x-1/2 -translate-y-full"
                   >
@@ -86,7 +97,7 @@ export function StoreLocator() {
 
           {/* Store list */}
           <Reveal from="right" className="flex flex-col gap-4">
-            <div className="flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2.5 shadow-sm">
+            {/* <div className="flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2.5 shadow-sm">
               <Search className="size-4 text-muted-foreground" />
               <input
                 type="text"
@@ -96,38 +107,95 @@ export function StoreLocator() {
               <Button size="sm" className="rounded-full">
                 Search
               </Button>
-            </div>
+            </div> */}
 
-            <div className="flex flex-col gap-3">
+            {/* <div className="flex flex-col gap-3">
               {stores.map((s) => {
                 const isActive = active === s.id
                 return (
                   <button
                     key={s.id}
                     type="button"
-                    onClick={() => setActive(s.id)}
+                    aria-label={s.name}
+                    onClick={() => {
+                      setActive(s.id)
+                      window.open(s.mapUrl, '_blank')
+                    }}
+                    style={{
+                      left: `${s.x}%`,
+                      top: `${s.y}%`,
+                    }}
+                    className="absolute -translate-x-1/2 -translate-y-full"
+                  >
+                    <span
+                      className={cn(
+                        'grid place-items-center rounded-full text-primary-foreground shadow-lg transition-all duration-300',
+                        isActive
+                          ? 'size-11 animate-bounce bg-primary'
+                          : 'size-8 bg-primary/70 hover:bg-primary',
+                      )}
+                    >
+                      <MapPin className={isActive ? 'size-6' : 'size-4'} />
+                    </span>
+
+                    {isActive && (
+                      <span className="absolute left-1/2 top-full mt-1 -translate-x-1/2 whitespace-nowrap rounded-full bg-card px-3 py-1 text-xs font-semibold shadow-md">
+                        {s.name}
+                      </span>
+                    )}
+                  </button>
+                )
+              })}
+            </div> */}
+            <div className="flex flex-col gap-3">
+              {stores.map((s) => {
+                const isActive = active === s.id
+
+                return (
+                  <button
+                    key={s.id}
+                    type="button"
+                    onClick={() => {
+                      setActive(s.id)
+                      window.open(s.mapUrl, "_blank")
+                    }}
                     className={cn(
-                      'flex items-start gap-3 rounded-2xl border p-4 text-left transition-all duration-200',
+                      "flex items-start gap-3 rounded-2xl border p-4 text-left transition-all duration-200",
                       isActive
-                        ? 'border-primary bg-primary/5 shadow-sm'
-                        : 'border-border/60 bg-card hover:border-primary/40',
+                        ? "border-primary bg-primary/5 shadow-sm"
+                        : "border-border/60 bg-card hover:border-primary/40"
                     )}
                   >
                     <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
                       <MapPin className="size-4" />
                     </span>
-                    <span className="min-w-0">
+
+                    <span className="min-w-0 flex-1">
                       <span className="block font-heading font-semibold">
                         {s.name}
                       </span>
-                      <span className="block truncate text-sm text-muted-foreground">
+
+                      <span className="block text-sm text-muted-foreground">
                         {s.address}
                       </span>
+
                       <span className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
-                        <Clock className="size-3.5" /> {s.hours}
+                        <Clock className="size-3.5" />
+                        {s.hours}
                       </span>
                     </span>
-                    <Navigation className="ml-auto size-4 shrink-0 text-primary" />
+
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        window.open(s.mapUrl, "_blank")
+                      }}
+                    >
+                      <Navigation className="mr-2 size-4" />
+                      Directions
+                    </Button>
                   </button>
                 )
               })}

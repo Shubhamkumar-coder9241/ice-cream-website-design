@@ -1,0 +1,4 @@
+allowBuilds:
+  inotify: true
+  msw: true
+  sharp: true

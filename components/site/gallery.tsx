@@ -4,12 +4,12 @@ import { Reveal } from './reveal'
 import { cn } from '@/lib/utils'
 
 const items = [
-  { src: '/images/gallery-1.png', alt: 'Assorted colorful ice cream scoops flat lay', span: 'row-span-2' },
-  { src: '/images/gallery-2.png', alt: 'Hand holding a melting double-scoop cone' },
-  { src: '/images/gallery-3.png', alt: 'Macro close-up of a chocolate ice cream scoop' },
-  { src: '/images/gallery-4.png', alt: 'Three colorful popsicle bars with fresh fruit', span: 'row-span-2' },
-  { src: '/images/product-mango-sundae.png', alt: 'Mango sundae in a tall glass' },
-  { src: '/images/product-mixed-fruit.png', alt: 'Mixed berry ice cream cup' },
+  { src: 'https://content3.jdmagicbox.com/comp/def_content_category/kwality-walls/1862863-kwality-walls-1001-66etm.jpg', alt: 'Assorted colorful ice cream scoops flat lay', span: 'row-span-2' },
+  { src: 'https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/RX_THUMBNAIL/IMAGES/VENDOR/2024/6/13/9f77f976-317d-4266-90ed-c29811f14914_290590.JPG', alt: 'Hand holding a melting double-scoop cone' },
+  { src: 'https://b.zmtcdn.com/data/dish_photos/06f/f5fea3c0ccf4c1f8cb747187fb20406f.jpeg', alt: 'Macro close-up of a chocolate ice cream scoop' },
+  { src: 'https://content3.jdmagicbox.com/comp/def_content_category/kwality-walls/kwality-walls-450-nn0kd.jpg', alt: 'Three colorful popsicle bars with fresh fruit', span: 'row-span-2' },
+  { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCYK0eUWJqeaMprZ7fPEyqf9iA3FZfXvEIjg&s', alt: 'Mango sundae in a tall glass' },
+  { src: 'https://pbs.twimg.com/media/HBBqd_jbMAAqenL.jpg', alt: 'Mixed berry ice cream cup' },
 ]
 
 export function Gallery() {

@@ -58,7 +58,7 @@ export function Footer() {
               <span className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
                 <IceCreamCone className="size-5" />
               </span>
-              <span className="font-heading text-xl font-bold">Scoopful</span>
+              <span className="font-heading text-xl font-bold">Surya Kwality Walls</span>
             </div>
             <p className="mt-4 max-w-xs text-pretty text-sm leading-relaxed text-primary-foreground/70">
               Crafting moments of pure joy since 1987. Small batches, big smiles,
@@ -66,13 +66,17 @@ export function Footer() {
             </p>
             <div className="mt-6 space-y-2 text-sm text-primary-foreground/70">
               <p className="flex items-center gap-2">
-                <MapPin className="size-4" /> 21 Sundae Street, Sweet City
+                <MapPin className="size-4" />Near Gandhi Maidan Patna 
               </p>
+              <a
+                href="tel:+919241296570"
+                className="flex items-center gap-2 hover:text-primary transition-colors"
+              >
+                <Phone className="size-4" />
+                +91 9241296570
+              </a>
               <p className="flex items-center gap-2">
-                <Phone className="size-4" /> +1 (800) 555-SCOOP
-              </p>
-              <p className="flex items-center gap-2">
-                <Mail className="size-4" /> hello@scoopo.com
+                <Mail className="size-4" />92shubhamkumar70.com
               </p>
             </div>
           </div>

@@ -26,7 +26,6 @@ export default function Page() {
       <FeaturedProducts />
       <BestSellers />
       <FlavorExplorer />
-      <SpecialOffers />
       <WhyChooseUs />
       <Reviews />
       <Gallery />
@@ -34,7 +33,7 @@ export default function Page() {
       <StoreLocator />
       <AppSection />
       <Faq />
-      <Newsletter />
+      
       <Footer />
     </main>
   )

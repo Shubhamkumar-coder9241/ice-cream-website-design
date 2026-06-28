@@ -90,12 +90,23 @@ export function Hero() {
               Explore Flavors
               <ArrowRight className="size-4" />
             </Button>
+            {/* <Button
+              size="lg"
+              variant="secondary"
+              className="rounded-full px-7 text-base"
+            ><a href="+919241296570">    <ShoppingBag className="size-4" />
+              Order Now</a>
+          
+            </Button> */}
             <Button
               size="lg"
               variant="secondary"
               className="rounded-full px-7 text-base"
+              onClick={() => {
+                window.location.href = "tel:+919241296570";
+              }}
             >
-              <ShoppingBag className="size-4" />
+              <ShoppingBag className="mr-2 size-4" />
               Order Now
             </Button>
           </div>

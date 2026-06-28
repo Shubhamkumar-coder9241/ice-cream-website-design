@@ -50,18 +50,8 @@ export function ProductCard({ product }: { product: Product }) {
         <span>({product.reviews.toLocaleString()})</span>
       </div>
 
-      <div className="mt-3 flex items-center justify-between gap-2">
-        <div className="flex items-baseline gap-1.5">
-          <span className="font-heading text-xl font-bold text-foreground">
-            ${product.price.toFixed(2)}
-          </span>
-          {product.oldPrice && (
-            <span className="text-sm text-muted-foreground line-through">
-              ${product.oldPrice.toFixed(2)}
-            </span>
-          )}
-        </div>
-        <Button
+      <div className="mt-3 flex items-center justify-end gap-2">
+        {/* <Button
           size="sm"
           onClick={() => setAdded(true)}
           className="rounded-full"
@@ -76,7 +66,7 @@ export function ProductCard({ product }: { product: Product }) {
               <Plus className="size-4" /> Add
             </>
           )}
-        </Button>
+        </Button> */}
       </div>
     </div>
   )
